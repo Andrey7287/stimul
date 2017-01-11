@@ -6,15 +6,18 @@
 *:after {
 	box-sizing: border-box;
 }
-.content {
-	overflow: hidden;
-}
-.body {
-	max-width: 1920px;
+.content,
+header,
+.footer-inner {
+	@include clearfix;
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 0 50px;
 }
 
 body {
 	font-size: #{$base-font-size}px;
+	line-height: #{$base-line-height}px;
 	color: $default-color;
 }
 p {
@@ -72,40 +75,32 @@ a {
 
 img {
 	max-width: 100%;
+	display: block;
 }
 
 //Buttons
 
 button {
-	border: 0;
-	padding: 0;
-	background-color: transparent;
-	text-indent: -9999px;
-	outline: none;
+
 }
 
 // Headers
 
 h1, .h1 {
-	@include font(30, 32, 400);
+	@include font(36, 40, 600);
 	color: $header;
 	text-transform: uppercase;
-	margin: 18px 0;
+	margin: 25px 0;
 }
 h2, .h2 {
-	@include font(30, 32, 700);
-	color: $header;
-	margin: 15px 0;
-}
-h3, .h3 {
-	@include font(20, 24, 700);
+	@include font(24, 28, 400);
 	color: $header;
 	margin: 10px 0;
 }
-
-.sub-title {
-	@include font(22,22, 700);
-	color: $grey;
+h3, .h3 {
+	@include font(20, 24, 400);
+	color: $header;
+	margin: 10px 0;
 }
 
 $btn-bkg: #01a3d4;

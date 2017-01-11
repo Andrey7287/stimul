@@ -2,22 +2,17 @@
 $open-sans: 'Open Sans', sans-serif;
 
 $default-font: $open-sans;
-$base-font-size: 15;
-$base-line-height: 26;
-$default-color: #545454;
-$black: #333;
+$base-font-size: 16;
+$base-line-height: 24;
+$default-color: #555;
+$white: #fff;
 
-$link: #01a3d4;
-$link-hov: #01a3d4;
+$link: $default-color;
+$link-hov: #333;
 
-$header: #40484b;
+$header: $default-color;
 
 /* Colors */
-$grey: #777;
-$soft-grey: #999;
-$bkg-grey: #e1e1e1;
-$bkg-footer: #e9f6fa;
+$bkg-footer: #c9c9c9;
+$bkg-grey: #ebebeb;
 
-/* Compass */
-
-//$site-sprite: sprite-map("../images/*.png");

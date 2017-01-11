@@ -1,0 +1,118 @@
+.main-block,
+.main-inner {
+	display: table;
+	width: 100%;
+	&__item {
+		vertical-align: top;
+		display: table-cell;
+	}
+}
+
+.main-block {
+	margin: 15px 0 70px;
+	@include clearfix;
+	.sub-title {
+		@include font(22, 26, 600);
+		color: $header;
+		text-transform: uppercase;
+		margin: 37px 0 26px;
+	}
+	&__item {
+		&.left {
+			width: 75%;
+		}
+		&.right {
+			width: 25%;
+		}
+	}
+}
+.main-inner {
+	&__item {
+		padding-right: 30px;
+		&.left {
+			width: 33.33333%;
+		}
+		&.right {
+			width: 66.66666%;
+		}
+	}
+}
+
+.news-feed {
+	overflow: hidden;
+	&__item {
+		overflow: hidden;
+		margin-bottom: 15px;
+		display: block;
+	}
+	&__img {
+		float: left;
+		margin-right: 10px;
+	}
+	&__date {
+		@include font(14,12);
+	}
+	&__title {
+		@include font(18,20);
+		margin: 12px 0;
+	}
+	&__announce {
+		@include font(14,20);
+	}
+	&__link {
+		text-align: right;
+		@include font(14,14);
+		a {
+			color: #7d7d7d;
+			//@include font(14,14);
+			text-transform: uppercase;
+		}
+	}
+	&:hover {
+		color: #000;
+	}
+}
+
+/* for general & author */
+.syled-cart {
+	position: relative;
+	&__bkg {
+		width: 100%;
+	}
+	&__bottom {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(0,0,0,.3);
+		color: #fff;
+		padding: 15px;
+	}
+}
+/* --------------------- */
+.general {
+	&__title {
+		@include font(30,36,600);
+		text-transform: uppercase;
+	}
+	&__date {
+		@include font(14,24);
+	}
+}
+.author {
+	overflow: hidden;
+	&__name {
+		@include font(24,28);
+		span {
+			@include font(18,28, $context: 24);
+		}
+	}
+	&__title {
+		margin: 10px 0;
+		@include font(24, 30);
+	}
+	&__announce {
+		@include font(18);
+	}
+
+}

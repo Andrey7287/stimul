@@ -38,10 +38,10 @@ $menu-border-bottom-color: $menu-bkg-inner;
 @mixin nav {
 	display: table;
 	width: 100%;
-	@include breakpoint(tablet) {
+	@include breakpoint(medium) {
 		position: relative;
 	}
-	@include breakpoint(mobile) {
+	@include breakpoint(tablet) {
 		transform: translateX(-100%) scaleY(0);
 		opacity: 0;
 		@at-root .mobile-open {
@@ -68,10 +68,10 @@ $menu-border-bottom-color: $menu-bkg-inner;
 		@if $menu-border-bottom-size > 0 {
 			border-bottom: #{$menu-border-bottom-size}px solid #{$menu-border-bottom-color};
 		}
-		@include breakpoint(tablet) {
+		@include breakpoint(medium) {
 			position: relative;
 		}
-		@include breakpoint(mobile){
+		@include breakpoint(tablet){
 			display: list-item;
 		}
 		a {
@@ -97,7 +97,7 @@ $menu-border-bottom-color: $menu-bkg-inner;
 			}
 		}
 		.dropdown {
-			@include breakpoint (tablet) {
+			@include breakpoint (medium) {
 				transform: translateY(-50%) scaleY(0);
 			}
 			width: 200px;
@@ -109,7 +109,7 @@ $menu-border-bottom-color: $menu-bkg-inner;
 			vertical-align: middle;
 			text-align: center;
 			transition: transform 0.3s ease-in;
-			@include breakpoint(mobile){
+			@include breakpoint(tablet){
 				width: auto;
 				position: static;
 				display: block; /// depricated
@@ -131,7 +131,7 @@ $menu-border-bottom-color: $menu-bkg-inner;
 						display: table-cell;
 						vertical-align: middle;
 						text-align: left;
-						@include breakpoint(mobile) {
+						@include breakpoint(tablet) {
 							text-align: center;
 						}
 					}
@@ -145,7 +145,7 @@ $menu-border-bottom-color: $menu-bkg-inner;
 			}
 		}
 
-		@include breakpoint (tablet) {
+		@include breakpoint (medium) {
 			&:hover {
 				.dropdown {
 					transform: translateY(0%) scaleY(1);
@@ -155,7 +155,7 @@ $menu-border-bottom-color: $menu-bkg-inner;
 			}
 		}
 
-		@include breakpoint (mobile) {
+		@include breakpoint (tablet) {
 			.dropdown{
 				&.show {
 					transform: translateY(0%) scaleY(1);

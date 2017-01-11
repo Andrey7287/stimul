@@ -1,13 +1,18 @@
 'use strict';
 
+/* Make jQuery available in global */
 console.log(`jQuery ${$.fn.jquery} is loaded`);
 window.$ = $;
 window.jQuery = $;
 
+/* Import project styles and components */
 import '../sass/css.scss';
 import Menu from './modules/menu';
+import Footer from './modules/footer';
 
+/* Define project components and variables */
 var menu = new Menu(),
+		footer = new Footer(),
 		isMap = $('#map').is('#map'),
 		isSlider = $('.slider').is('.slider'),
 		scrollTiming = 0;
@@ -43,9 +48,9 @@ var menu = new Menu(),
 ******** FOOTER ********
 ************************/
 
-import Footer from './modules/footer';
-var footer = new Footer();
-footer.fixFooter();
+$(window).on('load', function(){
+	footer.fixFooter();
+});
 
 
 /**********************
@@ -102,47 +107,34 @@ $(document).scroll(function(){
 import scrollup from './modules/scrollup';
 $('.scrollup').scrollUp();
 
-/***********************
-******** REACT ********
-************************/
+/*******************************
+***** Align blocks on main *****
+********************************/
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import NewComponent from './modules/react/new'
+function alignMainGreed(){
 
-class StoryBox extends React.Component {
+	var baseHeight = $('.general').outerHeight(true),
+			feedLinkHeight = $('.news-feed__link').outerHeight(true),
+			feedItemHeight = ( baseHeight - feedLinkHeight - 45 ) / 3;
 
-	constructor() {
-
-		super();
-		this.state = {
-			timer: 0
-		};
-	}
-
-
-	componentWillMount() {
-
-		setInterval( () => {
-			var date = new Date;
-			this.setState({ timer: date.getSeconds() });
-		}, 1000);
-
-	}
-
-	render() {
-		return (
-			<div>
-				<h1>App component</h1>
-				<NewComponent text="lorem -"/>
-				<p>{ this.state.timer }</p>
-			</div>
-		);
-	}
-}
-var targetEl = document.getElementById('box');
-if ( targetEl ) {
-
-	ReactDOM.render(<StoryBox />, targetEl);
+	$('.news-feed__item').height(feedItemHeight);
 
 }
+
+$(window).on('load', alignMainGreed);
+
+/*(function adaptiveAlignGreed () {
+
+	alignMainGreed();
+	var timing = 0;
+
+	$(window).resize(()=>{
+
+		if ( !timing ) {
+			timing = setTimeout(adaptiveAlignGreed, 200);
+		}
+
+	});
+
+})();*/
+

@@ -1,5 +1,8 @@
-$desktop: 992px;
-$tablet: 768px;
+/* Up */
+$desktop: 1200px;
+$medium: 992px;
+/* Down */
+$tablet: 991px;
 $mobile: 767px;
 $small: 480px;
 
@@ -7,8 +10,11 @@ $small: 480px;
 	@if $point == desktop {
 		@media (min-width: $desktop) { @content; }
 	}
+	@if $point == medium {
+		@media (min-width: $medium) { @content; }
+	}
 	@if $point == tablet {
-		@media (min-width: $tablet) { @content; }
+		@media (max-width: $tablet) { @content; }
 	}
 	@if $point == mobile {
 	@media (max-width: $mobile) { @content; }

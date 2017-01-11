@@ -1,0 +1,38 @@
+.header {
+	display: table;
+	width: 100%;
+	&__top {
+		padding: 25px 0;
+	}
+	&__item {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	&__img {
+		width: 16.66666%;
+	}
+	&__text {
+		width: 41.66666%;
+		padding-left: 30px;
+		.slogan {
+			@include font(72, 52);
+			text-transform: uppercase;
+		}
+	}
+	&__form {
+		width: 41.66666%;
+		position: relative;
+		.form-login {
+			height: 3.8em;
+			a {
+				@include font(18, 18);
+			}
+		}
+		.form-search {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+}
